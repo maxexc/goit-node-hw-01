@@ -4,4 +4,6 @@ const {getCurrentDate} = require('./dateUtils')
 
 console.log(`get current date function result: ${getCurrentDate( )}`);
 
-// console.log(global.testData);
+// console.log(process.env);
+
+console.log(process.argv);
