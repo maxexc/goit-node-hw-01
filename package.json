@@ -1,9 +1,22 @@
 {
-  "name": "hw1",
-  "version": "1.0.0",
+  "name": "goit-node-hw-01",
   "description": "",
+  "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxexc/goit-node-hw-01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxexc/goit-node-hw-01/issues"
+  },
+  "homepage": "https://github.com/maxexc/goit-node-hw-01#readme"
 }
