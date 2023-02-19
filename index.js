@@ -15,6 +15,22 @@ console.log(process.argv);
 // console/log(__dirname);
 
 // const [node, index, a, b] = process.argv
+// const a = process.argv[2]
+// const b = process.argv[3]
 const [,, a, b] = process.argv
 
-console.log(new Calc(parseInt(a)).sum(parseInt(b)).finish());
+// console.log(new Calc(parseInt(a)).sum(parseInt(b)).finish());
+
+const path = require('path')
+
+console.log(path.resolve('dateUtils.js'));
+// node index.js
+
+const fs = require('fs')
+
+fs.readFile('./data.txt', 'utf8', (error, data) => {
+    if (error) {
+        console.log(err);
+    }
+    console.log(data);
+})
