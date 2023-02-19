@@ -27,10 +27,18 @@ console.log(path.resolve('dateUtils.js'));
 // node index.js
 
 const fs = require('fs')
+// const path = require('path')
 
 fs.readFile('./data.txt', 'utf8', (error, data) => {
     if (error) {
-        console.log(err);
+        console.log(error);
     }
     console.log(data);
 })
+
+// absolute path
+const qwe = path.resolve('./qwe')
+// realative path
+const qwe1 ='./qwe'
+
+console.log(qwe, qwe1);
