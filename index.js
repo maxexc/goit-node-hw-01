@@ -14,6 +14,7 @@ console.log(process.argv);
 
 // console/log(__dirname);
 
+// const [node, index, a, b] = process.argv
 const [,, a, b] = process.argv
 
 console.log(new Calc(parseInt(a)).sum(parseInt(b)).finish());
