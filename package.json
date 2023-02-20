@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "node index",
+    "start:dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/maxexc/goit-node-hw-01#readme",
   "dependencies": {
-    "calc-js": "^2.0.7"
+    "calc-js": "^2.0.7",
+    "commander": "^10.0.0"
   }
 }
