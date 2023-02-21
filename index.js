@@ -42,3 +42,10 @@ const qwe = path.resolve('./qwe')
 const qwe1 ='./qwe'
 
 console.log(qwe, qwe1);
+
+const logger = require('./module');
+
+logger.info('info function');
+logger.log('log function');
+
+
