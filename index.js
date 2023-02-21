@@ -1,51 +1,40 @@
-const Calc = require('calc-js').Calc;
+const contacts = require('./contacts')
 
-console.log(12123);
-global.testData = 'aaaaaa'
-const {getCurrentDate} = require('./dateUtils')
+const { Command } = require("commander");
+const program = new Command();
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
 
-console.log(`get current date function result: ${getCurrentDate( )}`);
+program.parse(process.argv);
 
-// console.log(process.env);
+const argv = program.opts();
 
-console.log(process.argv);
-// process.exit();
-// console.log(4568);
+// TODO: refactoring
+function invokeAction({ action, id, name, email, phone }) {
+  switch (action) {
+    case "list":
+        contacts.listContacts();
+      break;
 
-// console/log(__dirname);
+    case "get":
+        contacts.getContactById(id);
+      break;
 
-// const [node, index, a, b] = process.argv
-// const a = process.argv[2]
-// const b = process.argv[3]
-const [,, a, b] = process.argv
+    case "add":
+        contacts.addContact(name, email, phone);
+      break;
 
-// console.log(new Calc(parseInt(a)).sum(parseInt(b)).finish());
+    case "remove":
+        contacts.removeContact(id);
+      break;
 
-const path = require('path')
+    default:
+      console.warn("\x1B[31m Unknown action type!");
+  }
+}
 
-console.log(path.resolve('dateUtils.js'));
-// node index.js
-
-const fs = require('fs')
-// const path = require('path')
-
-fs.readFile('./data.txt', 'utf8', (error, data) => {
-    if (error) {
-        console.log(error);
-    }
-    console.log(data);
-})
-
-// absolute path
-const qwe = path.resolve('./qwe')
-// realative path
-const qwe1 ='./qwe'
-
-console.log(qwe, qwe1);
-
-const logger = require('./module');
-
-logger.info('info function');
-logger.log('log function');
-
-
+invokeAction(argv);
