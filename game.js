@@ -20,11 +20,11 @@ const mind = Math.floor(Math.random() * 10) + 1;
 
 const isValid = value => {
   if (isNaN(value)) {
-    console.log('Введите число!'.red);
+    console.log('Enter the number!'.red);
     return false;
   }
   if (value < 1 || value > 10) {
-    console.log('Число должно быть в диапазоне 1 до 10'.red);
+    console.log('The number must be in the range 1 to 10'.red);
     return false;
   }
   return true;
@@ -33,15 +33,15 @@ const isValid = value => {
 const log = async data => {
   try {
     await fs.appendFile(logFile, `${data}\n`);
-    console.log(`Удалось сохранить результат в файл ${logFile}`.green);
+    console.log(`Managed to save the result to a file ${logFile}`.green);
   } catch (err) {
-    console.log(`Не удалось сохранить файл ${logFile}`.red);
+    console.log(`Failed to save file ${logFile}`.red);
   }
 };
 
 const game = () => {
   rl.question(
-    'Введите число от 1 до 10, чтобы угадать задуманное: '.yellow,
+    'Enter a number from 1 to 10 to guess what you have in mind: '.yellow,
     value => {
       let a = +value;
       if (!isValid(a)) {
@@ -50,13 +50,13 @@ const game = () => {
       }
       count += 1;
       if (a === mind) {
-        console.log('Поздравляю Вы угадали число за %d шага(ов)'.green, count);
+        console.log('Congratulations, you guessed the number in %d step(s)'.green, count);
         log(
-          `${new Date().toLocaleDateString()}: Поздравляю Вы угадали число за ${count} шага(ов)`,
+          `${new Date().toLocaleDateString()}: Congratulations, you guessed the number in ${count} step(s)`,
         ).finally(() => rl.close());
         return;
       }
-      console.log('Вы не угадали еще попытка'.red);
+      console.log('You did not guess yet, try again'.red);
       game();
     },
   );
