@@ -28,6 +28,16 @@ const path = require('path');
     }
 })();
 
+// --------------------
+//  ECMAScript. from version 14.x.
+
+
+// import { info, log } from './import.js';
+
+// info('info function');
+// log('log function');
+
+
 //  if use type = module in package.json
 //  CONTENT package.json 
 
