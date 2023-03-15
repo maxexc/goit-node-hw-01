@@ -1,1 +1,1 @@
-data maxexc file
+This is DATA text maxexc 
