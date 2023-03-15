@@ -1,5 +1,8 @@
 const fs = require('fs').promises;
 const path = require('path');
+// import * as path from 'path';
+// import { promises as fs } from 'fs';
+
 
 (async () => {
     try {
@@ -24,3 +27,43 @@ const path = require('path');
         console.error(err)
     }
 })();
+
+//  if use type = module in package.json
+//  CONTENT package.json 
+
+// {
+//   "name": "goit-node-hw-01",
+//   "description": "",
+//   "version": "1.0.0",
+//   "main": "index.js",
+
+//   "type": "module",
+
+//   "devDependencies": {
+//     "jest": "^29.5.0",
+//     "nodemon": "^2.0.20"
+//   },
+//   "scripts": {
+//     "testj": "jest",
+//     "test": "echo \"Error: no test specified\" && exit 1",
+//     "start": "node index",
+//     "start:dev": "nodemon index"
+//   },
+//   "repository": {
+//     "type": "git",
+//     "url": "git+https://github.com/maxexc/goit-node-hw-01.git"
+//   },
+//   "keywords": [],
+//   "author": "",
+//   "license": "ISC",
+//   "bugs": {
+//     "url": "https://github.com/maxexc/goit-node-hw-01/issues"
+//   },
+//   "homepage": "https://github.com/maxexc/goit-node-hw-01#readme",
+//   "dependencies": {
+//     "calc-js": "^2.0.7",
+//     "colors": "^1.4.0",
+//     "commander": "^10.0.0",
+//     "uuid": "^9.0.0"
+//   }
+// }
