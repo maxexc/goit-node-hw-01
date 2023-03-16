@@ -38,14 +38,14 @@ function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(argv);
-console.log(1234);
-// process.exit()
-global.testData = 'ssss';
+// console.log(1234);
+// // process.exit()
+// global.testData = 'ssss';
 
-const { getCurrentDate } = require('./dataUtils')
+// const { getCurrentDate } = require('./dataUtils')
 
-// console.log(process.env);
-console.log(getCurrentDate());
-console.log(process.argv);
-console.log(__dirname);
-console.log(__filename);
+// // console.log(process.env);
+// console.log(getCurrentDate());
+// console.log(process.argv);
+// console.log(__dirname);
+// console.log(__filename);
