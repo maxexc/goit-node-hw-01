@@ -2,10 +2,19 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', function (req, res) {
-res.json({ ok: true });
+const PORT = 8082
+
+app.get('/home', function (req, res) {
+    res.send('Server is runnig');
+    // res.sendStatus(200);
+    // res.json({ ok: true });
 });
-app.listen(8082);
+app.listen(PORT, (err) => {
+    if (err) {
+        return console.log('something wrong', err);
+    }
+    console.log(`Server is listening on ${PORT}`);
+})
 
 
 
