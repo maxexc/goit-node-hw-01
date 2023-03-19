@@ -2,13 +2,29 @@ const express = require('express');
 
 const app = express();
 
-const PORT = 8082
+const PORT = 3000
 
-app.get('/home', function (req, res) {
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.originalUrl}, ${new Date().toISOString()}`);
+    next();
+})
+
+// app.use((req, res) => {
+    // res.redirect('https://google.com')    
+    // res.status(500).json({ javascriprt: 'object' })
+// })
+
+app.get('/', (req, res) => {    
     res.send('Server is runnig');
+});
+
+app.get('/home', (req, res) => {    
+    res.json({ javascriprt: 'object' })
+    // res.send('Server is runnig');
     // res.sendStatus(200);
     // res.json({ ok: true });
 });
+
 app.listen(PORT, (err) => {
     if (err) {
         return console.log('something wrong', err);
